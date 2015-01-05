@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.1" url="http://code.google.com/p/freeproblemset/">
+	<generator name="HUSTOJ" url="http://code.google.com/p/hustoj/"/>
+	<item>
+<title><![CDATA[足球赛]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>在小明的学校,足球是最受小朋友们欢迎的体育项目之一,班级之间常常会有足球比赛。有一天,小明所在的班级和另一个班级同往常一样,又进行了一场比赛。小朋友们在比赛过程中都玩得非常投入,以至于他们在比赛结束后忘记了比分。小明希望通过统计大家的进球信息来判断比赛的胜负(或者平局)。已知小明所在的班级是一班,他们的对手来自二班。</p>
+<p></p>
+<p></p>]]></description>
+<input><![CDATA[<p>每组输入数据的第一行是两个整数 n 和 m (1&le;n&le;11,1&le;m&le;11)表示一班,n 进球的人数,m 表示 2 班进球的人数。第二行包含 n 个数,表示一班的 n 名球员分别进了多少球。第三行包含 m 个数,表示二班的 m 名球员分别进了多少球。(每名球员最多进5个球)</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>输出数据只有一行,包含一个整数。如果最终一班进球总数数比二班多,则一班获胜,输出 1;如果二班进球总数多,则二班获胜,输出 2;如果两个班进球总数相等,则表述平局,输出 0。</p>
+<p></p>]]></output>
+<sample_input><![CDATA[2 3
+2 2
+1 1 1]]></sample_input>
+<sample_output><![CDATA[1]]></sample_output>
+<test_input><![CDATA[9 3
+5 5 2 3 2 2 2 4 4
+2 1 5
+]]></test_input>
+<test_output><![CDATA[1
+]]></test_output>
+<test_input><![CDATA[5 8
+4 5 2 5 1
+1 3 3 4 4 3 3 3
+]]></test_input>
+<test_output><![CDATA[2
+]]></test_output>
+<test_input><![CDATA[10 7
+5 2 2 1 1 5 3 2 1 2
+2 5 2 2 5 4 1
+]]></test_input>
+<test_output><![CDATA[1
+]]></test_output>
+<test_input><![CDATA[4 11
+5 4 3 1
+3 3 5 2 3 4 4 4 5 4 4
+]]></test_input>
+<test_output><![CDATA[2
+]]></test_output>
+<test_input><![CDATA[11 2
+2 3 5 4 1 1 2 4 3 4 2
+2 2
+]]></test_input>
+<test_output><![CDATA[1
+]]></test_output>
+<test_input><![CDATA[2 3
+2 2
+1 1 2
+]]></test_input>
+<test_output><![CDATA[0
+]]></test_output>
+<test_input><![CDATA[2 3
+2 2
+1 1 1
+]]></test_input>
+<test_output><![CDATA[1
+]]></test_output>
+<test_input><![CDATA[11 3
+4 5 2 5 4 2 3 5 1 1 1
+2 3 4
+]]></test_input>
+<test_output><![CDATA[1
+]]></test_output>
+<test_input><![CDATA[11 8
+2 2 1 2 4 3 3 1 5 1 1
+4 3 5 4 2 2 4 5
+]]></test_input>
+<test_output><![CDATA[2
+]]></test_output>
+<test_input><![CDATA[2 11
+3 1
+2 2 4 2 2 1 3 3 4 1 2
+]]></test_input>
+<test_output><![CDATA[2
+]]></test_output>
+<hint><![CDATA[<p>&nbsp;【样例输入1】&nbsp;</p>
+<div>2 3<br />
+2 2<br />
+1 1 1</div>
+<p>【样例输出1】</p>
+<p>1</p>
+<p>(解释:总比分为 4:3,一班获胜,输出 1)</p>
+<p>【样例输入2】&nbsp;</p>
+<p>2 3<br />
+2 2<br />
+1 1 2</p>
+<p>【样例输出2】</p>
+<p>0</p>
+<p>(解释:总比分为 4:4,平局,输出 0)</p>]]></hint>
+<source><![CDATA[TJ-NOIP-2011]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char const* argv[])
+{
+    int n1, n2, t1, t2, t, ans, i;
+
+    scanf("%d %d", &n1, &n2);
+    t1 = 0;
+    for (i = 0; i < n1; i++) {
+        scanf("%d", &t);
+        t1 += t;
+    }
+
+    t2 = 0;
+    for (i = 0; i < n2; i++) {
+        scanf("%d", &t);
+        t2 += t;
+    }
+
+    if (t1 > t2) {
+        ans = 1;
+    } else if (t2 > t1) {
+        ans = 2;
+    } else {
+        ans = 0;
+    }
+
+    printf("%d\n", ans);
+
+    return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[投票]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>
+<p>新学期到了,小明所在的班级要通过投票的方式选择新班长,投票规则如下:</p>
+<p>1) 班级一共有 n 个人,每个人都有自己各自的编号 i(1&le;i&le;n)。<br />
+2) 班级中每个人都必须投票,而且只能投一票,投票的方式是写下自己支持的那名同学的编号<br />
+3) 由老师统计票数,设得票最多的同学所得的票数为 a<br />
+4) 如果仅有一名同学的票数达到 a,则这名同学胜出,输出这名同学得编号 i<br />
+5) 如果有多名同学的得票数达到 a,则输出 0</p>
+<p>请你写一个统计票数的程序,来判断这次投票中是否存在一个胜出者。</p>
+</p>
+<p></p>]]></description>
+<input><![CDATA[<p>每组输入数据的第一行包含一个数 n,表示班级有 n 名同学(1&le;n&le;50)。接下来一行包含 n 个数,第 i(1&le;i&le;n)个数 v[i],表示第 i 名同学投票支持第 v[i]名同学。请你根据上述规则,统计票数。</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>输出数据只有一行,包含一个整数。如果有一名同学胜出,则输出这名同学的编号。如果有多名同学获得最高票数,则输出0。</p>
+<p></p>]]></output>
+<sample_input><![CDATA[10
+2 1 3 2 7 2 2 8 1 1]]></sample_input>
+<sample_output><![CDATA[2]]></sample_output>
+<test_input><![CDATA[34
+22 25 18 32 29 1 29 7 7 26 7 34 5 18 2 15 23 16 18 4 25 7 27 29 34 24 25 26 21 32 29 29 32 3
+]]></test_input>
+<test_output><![CDATA[29
+]]></test_output>
+<test_input><![CDATA[7
+6 5 3 2 4 4 4
+]]></test_input>
+<test_output><![CDATA[4
+]]></test_output>
+<test_input><![CDATA[14
+10 10 4 10 1 12 7 4 14 2 6 5 9 1
+]]></test_input>
+<test_output><![CDATA[10
+]]></test_output>
+<test_input><![CDATA[46
+33 32 4 43 20 2 31 32 33 44 17 26 18 3 25 5 37 31 2 42 6 14 11 42 16 43 12 9 22 24 14 41 33 11 14 9 26 4 36 7 28 41 2 38 10 26
+]]></test_input>
+<test_output><![CDATA[0
+]]></test_output>
+<test_input><![CDATA[42
+15 36 3 36 40 20 31 37 24 1 33 12 9 22 33 20 40 6 18 12 34 15 6 3 19 41 29 26 34 33 7 29 26 22 37 11 23 20 12 22 23 20
+]]></test_input>
+<test_output><![CDATA[20
+]]></test_output>
+<test_input><![CDATA[23
+3 20 6 15 9 9 4 4 4 14 23 19 8 17 18 14 20 6 16 4 23 10 11
+]]></test_input>
+<test_output><![CDATA[4
+]]></test_output>
+<test_input><![CDATA[10
+2 1 3 2 7 2 2 8 1 1
+
+]]></test_input>
+<test_output><![CDATA[2
+]]></test_output>
+<test_input><![CDATA[23
+22 8 3 19 20 17 21 19 8 22 9 16 3 19 1 16 4 12 16 1 11 1 16
+]]></test_input>
+<test_output><![CDATA[16
+]]></test_output>
+<test_input><![CDATA[15
+2 6 9 11 6 7 1 8 1 10 10 15 8 9 3
+]]></test_input>
+<test_output><![CDATA[0
+]]></test_output>
+<test_input><![CDATA[37
+4 3 9 32 19 33 33 20 35 37 8 21 33 24 17 28 32 17 33 32 22 32 34 36 29 10 24 37 10 20 16 13 34 37 5 5 31
+]]></test_input>
+<test_output><![CDATA[0
+]]></test_output>
+<hint><![CDATA[<p>&nbsp;解释,选 2 号同学的人数为 4,选 1 号同学的人数为 3,选 3 号,7 号 8 号的人数都为 1,因此 2 号同学胜出</p>]]></hint>
+<source><![CDATA[TJ-NOIP-2011]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 64
+
+int main (int argc, char const* argv[])
+{
+    int n, i, t, max, repeat, ans, v[MAX];
+
+    scanf("%d", &n);
+    memset(v, 0, sizeof(int) * MAX);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &t);
+        v[t-1]++;
+    }
+
+    max = 0; repeat = 0;
+    for (i = 0; i < n; i++) {
+        if (max == v[i]) {
+            repeat++;
+        }
+        if (max < v[i]) {
+            max = v[i]; ans = i+1; repeat = 0;
+        } 
+    }
+
+    printf("%d\n", repeat == 0 ? ans : 0);
+
+    return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[找零钱]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>学校里有一台自动售货机,每天都有很多同学光顾。同学们选择自己想买的商品,投入纸币,然后就能从自动售货机处拿到自己需要的商品和零钱。已知自动售货机有面值为 1 元,5 元,10 元,20 元,50 元的纸币,纸币的张数无限。在这台自动售货机找零钱的时候,它尽量用最少张数的纸币组合成需要的零钱总数。例如,如果要找 9 元零钱,方案一是用 9 张 1 元的,方案二是用 5 张货币(1张 5 元和 4 张 1 元)。自动售货机会采用方案二,给出 5 张货币。如果告诉你零钱总数,你是否能知道最少用多少张货币就能组合成这个总数?</p>
+<p></p>]]></description>
+<input><![CDATA[<p>每组输入数据只包含一行,是一个整数 v(1&le;v&le;99),表示零钱总数。</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>输出数据只有一行,包含一个整数,表示最少使用的货币数目。</p>
+<p></p>]]></output>
+<sample_input><![CDATA[9]]></sample_input>
+<sample_output><![CDATA[5]]></sample_output>
+<test_input><![CDATA[72
+]]></test_input>
+<test_output><![CDATA[4
+]]></test_output>
+<test_input><![CDATA[79
+]]></test_input>
+<test_output><![CDATA[7
+]]></test_output>
+<test_input><![CDATA[46
+]]></test_input>
+<test_output><![CDATA[4
+]]></test_output>
+<test_input><![CDATA[24
+]]></test_input>
+<test_output><![CDATA[5
+]]></test_output>
+<test_input><![CDATA[5
+]]></test_input>
+<test_output><![CDATA[1
+]]></test_output>
+<test_input><![CDATA[97
+]]></test_input>
+<test_output><![CDATA[6
+]]></test_output>
+<test_input><![CDATA[9
+]]></test_input>
+<test_output><![CDATA[5
+]]></test_output>
+<test_input><![CDATA[43
+]]></test_input>
+<test_output><![CDATA[5
+]]></test_output>
+<test_input><![CDATA[58
+]]></test_input>
+<test_output><![CDATA[5
+]]></test_output>
+<test_input><![CDATA[41
+]]></test_input>
+<test_output><![CDATA[3
+]]></test_output>
+<hint><![CDATA[<p>
+<p>【样例输入】&nbsp;</p>
+<p>9</p>
+<p>【样例输出】</p>
+<p>5</p>
+<p>(解释:1 张 5 元,4 张 1 元,总共 5 张)</p>
+<p>【样例输入】&nbsp;</p>
+<p>97</p>
+<p>【样例输出】</p>
+<p>6</p>
+<p>(解释:1 张 50 元,2 张 20 元,1 张 5 元,2 张 1 元,总共 6 张)</p>
+</p>
+<p></p>]]></hint>
+<source><![CDATA[TJ-NOIP-2011]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char const* argv[])
+{
+    int t, i, ans;
+    int cash[] = {50, 20, 10, 5, 1};
+
+    scanf("%d", &t);
+
+    ans = 0;
+    while (t) {
+        for (i = 0; i < 5; i++) {
+            if (t >= cash[i]) {
+                t -= cash[i];
+                ans++;
+                break;
+            }
+        }
+    }
+
+    printf("%d\n", ans);
+
+    return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[查病毒]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>在课余时间,小明最喜欢做的事情就是上网。令人头疼的是,在网上会有很多的病毒。现在,小明遇到了一种新的病毒,这种病毒是可以理解为一个由 n 个小写字母组成(1&le;n&le;100)的字符串。小明发现这些字符串的类型可以用一个整数 a 表示,而且 a 等于这个字符串的最长回文子串的长度。</p>
+<p>回文串是这样的字符串,无论从前往后读,或是从后往前读,读到的字符串都相同。比如一个字符串是 cbabc,它包含的回文子串有:a,bab,cbabc。其中最长的是 cbabc,长度为 5。又比如一个字符串 cabba,它最长的回文子串是 abba,长度是 4。现在小明的任务就是找到每一个字符串的最长回文子串,输出它的长度。</p>
+<p></p>]]></description>
+<input><![CDATA[<p>每组输入数据只有一行,包含一个字符串。</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>输出数据只有一行,是一个整数,表示这个字符串的最长回文子串的长度。</p>
+<p></p>]]></output>
+<sample_input><![CDATA[cbabc]]></sample_input>
+<sample_output><![CDATA[5]]></sample_output>
+<test_input><![CDATA[ureswnkmfwoeubvzfojglhwuclbfyfdaoaxxojafpxxpkjzgdlweusmkeqtqekmsuewldgzjkpxxpfajoxxaoadfyfblcuwhlzzr
+]]></test_input>
+<test_output><![CDATA[77
+]]></test_output>
+<test_input><![CDATA[otbbauxaivjssooedyukdupkoro
+]]></test_input>
+<test_output><![CDATA[3
+]]></test_output>
+<test_input><![CDATA[yjgupnnjsmkuklozyyz
+]]></test_input>
+<test_output><![CDATA[4
+]]></test_output>
+<test_input><![CDATA[qzzkufahybutsihistubyuyubjzegnwqmbqbgpnipftfjhhtxyyjxrwnowczb
+]]></test_input>
+<test_output><![CDATA[13
+]]></test_output>
+<test_input><![CDATA[dfycpcxcpcyiq
+]]></test_input>
+<test_output><![CDATA[9
+]]></test_output>
+<test_input><![CDATA[xuxcdfxjfycesfrkkvmoswvktlosrhnjokbcvcvvbbvvcvcbkojnhrsoltktztqhiopbnylrrhee
+]]></test_input>
+<test_output><![CDATA[36
+]]></test_output>
+<test_input><![CDATA[cbabc
+]]></test_input>
+<test_output><![CDATA[5
+]]></test_output>
+<test_input><![CDATA[ptggexmmsufekhqrnagjkcxdgnqljgapayjeowrrwoejyapagjlqngdxckjgagrukd
+]]></test_input>
+<test_output><![CDATA[44
+]]></test_output>
+<test_input><![CDATA[pjsqvqjaqjqblcg
+]]></test_input>
+<test_output><![CDATA[3
+]]></test_output>
+<test_input><![CDATA[mzoghepymffkukdbcvljskgjcvziqrbcsuktppjpjwcncwjpjpptkuscbrqekgfiobxwlnxopbrtkkmbzcaixa
+]]></test_input>
+<test_output><![CDATA[31
+]]></test_output>
+<hint><![CDATA[<p></p>
+<p></p>]]></hint>
+<source><![CDATA[TJ-NOIP-2011]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char buf[128];
+
+int check(int s, int e)
+{
+    while (s < e) {
+        if (buf[s] != buf[e]) {
+            return 0;
+        } else {
+            s++; e--;
+        }
+    }
+
+    return 1;
+}
+
+int main (int argc, char const* argv[])
+{
+    int len, i, ans, ret;
+
+    scanf("%s", buf);
+
+    ans = len = strlen(buf);
+    while (1) {
+        ret = 0;
+        for (i = 0; i + ans <= len; i++) {
+            ret = check(i, i+ans-1);
+            if (ret) break;
+        }
+        if (ret) break;
+        ans--;
+    }
+
+    printf("%d\n", ans);
+
+    return 0;
+}]]></solution>
+	</item>
+</fps>

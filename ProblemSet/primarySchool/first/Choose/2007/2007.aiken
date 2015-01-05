@@ -1,0 +1,104 @@
+第四代计算机的主要逻辑元件采用的是（    ）
+A. 晶体管
+B. 大规模和超大规模集成电路
+C. 小规模集成电路
+D. 电子管
+ANSWER: B
+
+下列有关存储器读写速度的排列，正确的是（    ）
+A. RAM>Cache>硬盘>软盘
+B. Cache>硬盘>RAM>软盘
+C. Cache>RAM>硬盘>软盘
+D. RAM>硬盘>软盘>Cache
+ANSWER: C
+
+(AB)H+(1010)B=(     )
+A. (10100101)B
+B. 180
+C. (AD)H
+D. (B5)H
+ANSWER: D
+
+下列不属于输入法的是（    ）
+A. 五笔输入法
+B. 联想输入法
+C. 区位输入法
+D. 双拼输入法
+ANSWER: B
+
+如果某台笔记本的内存是1G，它表示多大（    ）
+A. 1024MB字节
+B. 1024000字节
+C. 1000MB字节
+D. 2^30字节
+ANSWER: D
+
+我们平时浏览网页通常是通过一种叫做（    ）协议
+A. FTP
+B. HTTP
+C. SMTP
+D. TELNET
+ANSWER: B
+
+微机的发展是以（    ）的发展作为标志的
+A. 微处理器的处理速度
+B. 内存大小
+C. 硬盘大小
+D. 软件性能
+ANSWER: A
+
+计算机断电后，（    ）中的数据会丢失
+A. 硬盘
+B. 软盘
+C. 内存
+D. 光盘
+ANSWER: C
+
+QBASIC语言属于(    )
+A. 机器语言
+B. 编译性语言
+C. 解释性语言
+D. 汇编语言的一种
+ANSWER: C
+
+输入语句a$="123", b$="456", PRINT ASC(b$) - ASC(a$)后，请问屏幕上输出多少（    ）
+A. 3
+B. 33
+C. 333
+D. 0
+ANSWER: A
+
+下面的四个QB表达式中，非法的表达式是（    ）
+A. a = b + c
+B. a = (b = c)
+C. a + bc
+D. a$b+c
+ANSWER: D
+
+QBASIC表达式ABS(-1) + INT(RND(2))的值为（    ）
+A. -1
+B. 1
+C. 0
+D. 2
+ANSWER: B
+
+QB赋值语句CONST a=90后，执行PRINT a+ 100时屏幕显示（    ）
+A. 190
+B. 90
+C. 100
+D. 显示出错信息
+ANSWER: A
+
+m, n是正整数，且m<n，下面那个语句能将x赋值为一个m到n之间（含m, n）任意数，即满足m<=x<=n的是（    ）
+A. x = INT(RND*(n-m+1)+m
+B. x = INT(RND*m)+n
+C. x = INT(RND*n)+m
+D. x = INT(RND*(n-m))+m
+ANSWER: A
+
+四个字符串“XY”、“XYZ”、“ab“及”abc“中最大者为（    ）提示：“A”的ASCII码小于“a“的ASCII码。
+A. XY
+B. XYZ
+C. ab
+D. abc
+ANSWER: D

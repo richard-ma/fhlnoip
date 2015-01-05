@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<fps version="1.1" url="http://code.google.com/p/freeproblemset/">
+	<generator name="HUSTOJ" url="http://code.google.com/p/hustoj/"/>
+	<item>
+<title><![CDATA[回文单词]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>小明正在背令人头疼的英文单词，突然他发现了一个有趣的现象，就是有些单词从左往右读和从右往左读是完全一样的，他把这样的单词叫做&ldquo;回文单词&rdquo;，比如：&ldquo;eye&rdquo;、&ldquo;dad&rdquo;都是回文单词，而&ldquo;dog&rdquo;、&ldquo;book&rdquo;不是。现在给定的N个单词，你要写一个程序帮助小明判断每个词是不是回文单词。</p>
+<p></p>]]></description>
+<input><![CDATA[<p>输入数据的第一行是一个整数N（1&lt;=N&lt;=10），表示这组数据一共有N个单词。接下来N行每行包含一个单词，单词只由小写字母组成，不包含空格或其它字符。单词长度不超过100。</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>输出数据应该包含N行，如果第i个输入单词是回文单词，则应该在第i行输出&ldquo;yes&rdquo;，否则输出&ldquo;no&rdquo;。（输出不包含引号，输出均为小写字母。只有N行输出都正确时才能得到该组数据的分数）</p>
+<p></p>]]></output>
+<sample_input><![CDATA[3
+eye
+book
+dad]]></sample_input>
+<sample_output><![CDATA[yes
+no
+yes]]></sample_output>
+<test_input><![CDATA[10
+tgedlodafrtprfkybmmmbykfrptrfadoldegt
+xdkhpodmxvnkbmslnltlrgkhgnlpeommeywqeyhrnxphrr
+kenhya
+oxg
+suhnotxnxiepjjjcqtnzvtnnojlnvyuigxlb
+dglqzjtattwqtblxonuuywjaxlabktsuzyfbzbrqwnnynsqagjditdmybxvuwcstgellprphp
+zzfleidrlbdkzbjnlxkktzhclwqmrdbbdhgjfmidz
+antmnwenawlllozyaylvvgevqiqjhybzraiwfnfuqaqufnfwiarzbyhjqiqvegvvlyayzolllwanewnmtna
+aju
+qfntkgkcibnxjmxtwnejiiwtdfzdpfngbreswzkbvwdnz
+]]></test_input>
+<test_output><![CDATA[yes
+no
+no
+no
+no
+no
+no
+yes
+no
+no
+]]></test_output>
+<test_input><![CDATA[10
+fhnsmflceyiainhgmasgoezporvjoaxkjqmggcdrgvmcgrjuypygluqkcdkosbbsypwjcilmzsonfmmzittlkwxewjhcn
+rakpuuyrnwpyagkyin
+zqckcntzbomdewmponortgyaqvycjkbhpfvspavsatjnlvzmfcdfgxrbpauwhxyrqahrjbpwdtrvbvohchazjne
+is
+gechecgmzfue
+xjrsjfjjphzzfzzhpjjfjsrjx
+xcqxchcxqcx
+ylymohcshpsbeyixewntacjnroddforjd
+uzincwubeqlspyyfsheerllcabuaiqjkdjrqqrjdkjqiaubacllreehsfyypslqebuwcnizu
+sjezttnelouhyrwwoctrssenzymdjsbmreggyttyggermbsjdmyznessrtcowwryhuolenttzejs
+]]></test_input>
+<test_output><![CDATA[no
+no
+no
+no
+no
+yes
+yes
+no
+yes
+yes
+]]></test_output>
+<test_input><![CDATA[10
+rvyllyvr
+ktrczkcljtbifuwufibtjlckzcrtk
+ogujuavrztjzgfwjrcyxnqnxycrjwfgzjtzrvaujugo
+rutqxedaxelkcgsvdxoejy
+ufkquauyuechghceuyuauqkfu
+nthlcxppwsi
+xplgomkibicehcrbwfhockjekjpxrwgir
+g
+tsikwqtntwiltdvvczczcvvdtliwtntqwkist
+qbrtgasrqmbxzwvizscilmnnwovnwubmbttg
+]]></test_input>
+<test_output><![CDATA[yes
+yes
+yes
+no
+yes
+no
+no
+yes
+yes
+no
+]]></test_output>
+<test_input><![CDATA[10
+bvvicigfolicinndcdcnjdjtxdttjwdzucfsvcvzk
+iggi
+gkaxktqndjnjwxuuvtcluruvev
+msppftptfppsm
+dtrnyqouopzgktsvondldzciswdfefnabelbieaogouavxptppmcuivrxuakomv
+vfvanxqhyyemhthbbdyngpyggeoispxijanfxqaxaqxfnajixpsioeggypgnydbbhthmeyyhqxnavfv
+tvvehfscjlgetcwsaxeieaexgyjlrpmouewhacmjmcahweuomprljygxeaeiexaswctegljcsfhevvt
+whfonnuiycfvmzysyjqarpqluyvlizlapvymyinxlmvdfdrbrdfdvmlxniymyvpalzilvyulqpraqjysyzmvfcyiunnofhw
+vvcffonubcboxobcbunoffcvv
+knwipfbwootjeaxaejtoowbfpiwnk
+]]></test_input>
+<test_output><![CDATA[no
+yes
+no
+yes
+no
+yes
+yes
+yes
+yes
+yes
+]]></test_output>
+<test_input><![CDATA[10
+mkplylpkm
+lxyvtnlhedyrrxxckakwf
+fadqajzmxags
+dgatglljjzwymyimuagmc
+hcherzgpbgkzxywzzupnilkqltxrutaykdygwb
+krcbpnblbktjs
+yswmpobqryzrdwwdrzyrqbopmwsy
+imysorvottqoqlerjjrelqoqttovrosymi
+ciinowossowoniic
+iankaarewweraaknai
+]]></test_input>
+<test_output><![CDATA[yes
+no
+no
+no
+no
+no
+yes
+yes
+yes
+yes
+]]></test_output>
+<test_input><![CDATA[10
+moykzuunfzdtbu
+qcivabizyzibavicq
+hxkwhskcdzhsivjvmnjnvdgmck
+zkspdlexirixeldpskz
+ouhgmssflbvpypdpojkokirxbbwskircttkvhdfzvunoburv
+ihkzrgrzkhi
+ywqbprisjwgjwllwjgwjsirpbqwy
+kybyejegyffpuyhprowsbwzv
+sdgsayixuboenyonsozutughswyqhhvpgkwgjujwltjyu
+jdxwyysamizrvcjwottttowjcvrzimasyywxdj
+]]></test_input>
+<test_output><![CDATA[no
+yes
+no
+yes
+no
+yes
+yes
+no
+no
+yes
+]]></test_output>
+<test_input><![CDATA[10
+meqgnftajaidaadiajatfngqem
+kkiiwxmqjdaqsqb
+addehfzbnxqrzrtytzerzfiuvbospftthj
+ijvewsservvlacixtwbmchtvozcpwicwhibmozxdyhjjwwbwfe
+wiadnvgrcbfjmjfvzhwavwglbvymp
+ivzhqayajgmmgjayaqhzvi
+hrjppappjirusmorxpmpymonpnomypmpxromsurijppappjrh
+cazwiiowdokhoobtmpqzchzc
+ouimaulwizhjsgnnppieippnngsjhziwluamiuo
+clynsvmostsciwzobfdmllwcypwfgyzke
+]]></test_input>
+<test_output><![CDATA[yes
+no
+no
+no
+no
+yes
+yes
+no
+yes
+no
+]]></test_output>
+<test_input><![CDATA[10
+xihjdwrmnuvwndwwqxodawcsfxauwyclhwd
+togjxdawaciohlupmfgtlypispdgpnpujlxwiykvqurckldhejiqdsywfopwogkftgradqhorgkuinvawzmj
+qogayfzpcnlbvszzcynrgwfnrxawoxpzpwwlnxeulllycxueuxcyllluexnlwwpzpxowaxrnfwgrnyczzsvblncpzfyagoq
+wajnwggjavqxlsdodwdwkmoicmdqanhvmxpkfopcpxglswnffnwslgxpcpofkpxmvhnaqdmciomkwdwdodslxqvajggwnjaw
+mixwklcqspetpryuyqsbztwdikbwabbytumtwoicvv
+tzrkxganyqubgqrqxywhkslzbtokrmlfzuyzjkdjjsjntzev
+nynlyeanqbqxwvczopwvbzlgagihzvgzxlekdirnwndrppztxhabsxhewqrvbyg
+fgjnbmaygvpbfjlondpewanrj
+enhleatcphotgjisxgdbowzutfnhicqwrkklogtyoxylfdkvnysqlquftslsoaqe
+yrxhzbwbzhxry
+]]></test_input>
+<test_output><![CDATA[no
+no
+yes
+yes
+no
+no
+no
+no
+no
+yes
+]]></test_output>
+<test_input><![CDATA[10
+oqhpxedqkagolxhltkpiovhzttzhvoipktlhxlogakqdexphqo
+dtazsvwyuhyoxusoxitkhlnlvlwuvnonplny
+nggocz
+tmssfwbfegdpmpvmrhflhtqemobyejcjoqjndjt
+lby
+aybnkqqcqddjdaxgxeoiwsnmwvjcnynvsseriqkddaqtvbgvhrldvrchsfbtzklapxatffkojxkeas
+vhsqlrnihmobjecwkkvnkibdqnwjyilmjoqxoefhihqbnlxqdctgjwwcrlfifksbjptverejvubvpwjihjeqoxpnkfwsza
+njumbkouqfrizcpwcczmqbchzbzvjjnlktvryoszxjheyweoydderppqdcsijcxohwjseuderxupl
+wwgpnknntrqgbzkdpyknrtmduznpvyfvtughzvwupwuugskwzvmtwlrrxlvykxtipgkxcwteenbmjbtik
+gxedaffsrmzpyxrauqypssffsspyquarxypzmrsffadexg
+]]></test_input>
+<test_output><![CDATA[yes
+no
+no
+no
+no
+no
+no
+no
+no
+yes
+]]></test_output>
+<test_input><![CDATA[10
+swnwxnorbjimewrftgx
+yzggzy
+wfbwaawrosip
+aqbnddefmadonjitltiiqmewkyzfyfezbtyvumqkuuen
+xmsqutufzcxdlkkcwqpamjnfifnjmapqwckkldxczfutuqsmx
+kfdbklimbmdsksntbpmmphbbyncabxkftskyvcsyjdu
+ooxqgatntagqxoo
+zcjktotkjcz
+wsvamyosmoaywcqytuzjsdtayzhtjoquitbyzye
+nwszdlplmasukuxyhhhsiicsamfqimq
+]]></test_input>
+<test_output><![CDATA[no
+yes
+no
+no
+yes
+no
+yes
+yes
+no
+no
+]]></test_output>
+<hint><![CDATA[]]></hint>
+<source><![CDATA[TJ-NOIP-2008]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main (int argc, char const* argv[])
+{
+    int n, flg, len, i;
+    char buf[128];
+
+    scanf("%d", &n);
+    while (n--) {
+        scanf("%s", buf);
+        len = strlen(buf);
+
+        flg = 1;
+        for (i = 0; i < len / 2 + 1; i++) {
+            if (buf[i] != buf[len-1-i]) {
+                flg = 0;
+                break;
+            }
+        }
+
+        if (flg) {
+            printf("yes\n");
+        } else {
+            printf("no\n");
+        }
+    }
+
+    return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[淘汰赛]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>N个小朋友在进行象棋比赛，比赛采用淘汰赛制，在第一轮的时候，N个小朋友两两配对进行比赛，获胜的小朋友进入下一轮。如果人数是奇数的话，会有一个小朋友不能配对，这时这个小朋友无需比赛直接进入下一轮。在下一轮仍然采用同样的方式继续进行，直至数轮后只剩下一个小朋友为止，这个小朋友就是最后的冠军。现在给定一开始参赛的小朋友数，你要写程序求出要决出最后的冠军，须进行多少轮比赛。</p>
+<p></p>]]></description>
+<input><![CDATA[<p>输入数据只有一行，包含一个正整数N（1&lt;N&lt;=10000），表示参赛的小朋友数。</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>输出数据也只有一行，包含一个数，表示需要进行的比赛场数。</p>
+<p></p>]]></output>
+<sample_input><![CDATA[5]]></sample_input>
+<sample_output><![CDATA[3]]></sample_output>
+<test_input><![CDATA[9362
+]]></test_input>
+<test_output><![CDATA[14
+]]></test_output>
+<test_input><![CDATA[1481
+]]></test_input>
+<test_output><![CDATA[11
+]]></test_output>
+<test_input><![CDATA[71
+]]></test_input>
+<test_output><![CDATA[7
+]]></test_output>
+<test_input><![CDATA[5727
+]]></test_input>
+<test_output><![CDATA[13
+]]></test_output>
+<test_input><![CDATA[43
+]]></test_input>
+<test_output><![CDATA[6
+]]></test_output>
+<test_input><![CDATA[36
+]]></test_input>
+<test_output><![CDATA[6
+]]></test_output>
+<test_input><![CDATA[69
+]]></test_input>
+<test_output><![CDATA[7
+]]></test_output>
+<test_input><![CDATA[4468
+]]></test_input>
+<test_output><![CDATA[13
+]]></test_output>
+<test_input><![CDATA[6966
+]]></test_input>
+<test_output><![CDATA[13
+]]></test_output>
+<test_input><![CDATA[2
+]]></test_input>
+<test_output><![CDATA[1
+]]></test_output>
+<hint><![CDATA[<p>【样例输入1】</p>
+<p>5</p>
+<p>【样例输出1】</p>
+<p>3</p>
+<p>（解释：在第一轮，5个小朋友中有4个小朋友组成两对，进行两场比赛，另一个小朋友直接晋级，这样一共3个小朋友晋级第二轮。在第二轮3个小朋友中2个组成一对进行一场比赛，另一个直接晋级，这样共2个小朋友晋级第三轮。在第三轮只剩下2个小朋友，他们之间进行一场比赛决出最后冠军。所以一共进行了3轮比赛。）</p>
+<p></p>
+<p>【样例输入2】</p>
+<p>100</p>
+<p>【样例输出2】</p>
+<p>7</p>
+<p></p>]]></hint>
+<source><![CDATA[TJ-NOIP-2008]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+
+int pow2 (int k)
+{
+    int n, i;
+    n = 1;
+
+    for (i = 0; i < k; i++) {
+        n *= 2;
+    }
+
+    return n;
+}
+
+int main (int argc, char const* argv[])
+{
+    int i, n;
+
+    scanf("%d", &n);
+
+    i = 0;
+    while (pow2(i) < n) {
+        i++;
+    }
+
+    printf("%d\n", i);
+
+    return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[小朋友分组]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>幼儿园的小朋友分成N组做游戏，但每个组的人数有时不符合老师的要求。现在你要帮助老师把其中的一些小朋友从某组移动到另一组，使得所有N个组的人数大于等于MinC并且小于等于MaxC，其中MinC和MaxC是给定的两个数，并且一定满足MinC&lt;=MaxC。现在老师想让被移动的小朋友数尽可能少，你能求出最少需要移动多少个小朋友吗？</p>
+<p></p>]]></description>
+<input><![CDATA[<p>输入数据的第一行包含用空格隔开的三个数N、MinC、MaxC，分别表示组数，每组的最小人数和最大人数（1&lt;=N&lt;=100, 1&lt;=MinC&lt;=MaxC&lt;=100）。第二行包含用空格隔开的N个正整数，表示开始的时候每个组的人数，每组的人数保证不超过100。</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>请注意有可能出现无论怎样移动都不能满足要求的情况，这时应该输出-1。</p>
+<p></p>]]></output>
+<sample_input><![CDATA[3 10 15
+20 8 6]]></sample_input>
+<sample_output><![CDATA[6]]></sample_output>
+<hint><![CDATA[<p>【样例输入1】</p>
+<p>3 10 15<br />
+20 8 6</p>
+<p>【样例输出1】</p>
+<p>6</p>
+<p>（解释：我们可以从第一组选出2个小朋友放到第二组，再选出4个小朋友放到第三组，这样各组人数为14、10、10，满足要求，并且没有更好的方法可以移动少于6个小朋友就满足要求。）</p>
+<p></p>
+<p>【样例输入2】</p>
+<p>3 5 20<br />
+20 8 6</p>
+<p>【样例输出2】</p>
+<p>0</p>
+<p>（解释：我们无需移动任何一个小朋友就已经满足要求了。）</p>
+<p></p>
+<p>【样例输入3】</p>
+<p>3 2 1<br />
+20 8 6</p>
+<p>【样例输出3】</p>
+<p>-1</p>
+<p>（解释：无论怎样移动也不可能满足要求。）</p>
+<p></p>]]></hint>
+<source><![CDATA[TJ-NOIP-2008]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+
+int main (int argc, char const* argv[])
+{
+    int n, max, min, i, sum, ans1, ans2;
+    int a[100];
+    
+    scanf("%d %d %d", &n, &min, &max);
+    sum = 0;
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+        sum += a[i];
+    }
+
+    if (sum > n * max || sum < n * min) {
+        printf("-1\n");
+    } else {
+        ans1 = 0;
+        for (i = 0; i < n; i++) {
+            if (a[i] < min) {
+                ans1 = ans1 + min - a[i];
+            }
+        }
+
+        ans2 = 0;
+        for (i = 0; i < n; i++) {
+            if (a[i] > max) {
+                ans2 = ans2 + a[i] - max;
+            }
+        }
+
+        printf("%d\n", ans1 > ans2 ? ans1 : ans2);
+    }
+
+    return 0;
+}]]></solution>
+	</item>
+<item>
+<title><![CDATA[机器人]]></title>
+<time_limit unit="s"><![CDATA[1]]></time_limit>
+<memory_limit unit="mb"><![CDATA[128]]></memory_limit>
+
+<description><![CDATA[<p>小明今年得到了一个好玩的生日礼物&mdash;&mdash;遥控机器人。这个机器人可以接受4种指令：</p>
+<p>N：表示向北走一步<br />
+S：表示向南走一步<br />
+E：表示向东走一步<br />
+W：表示向西走一步</p>
+<p>现在小明把这个机器人放在一个迷宫中，然后向机器人发送指令。一般情况下，机器人会严格按照指示一步步运动。但是在迷宫中有很多障碍物，如果机器人发现下一个指令会让它撞上障碍物，那么它就会忽视这个指令而停在原地。现在给定迷宫的地图（包含所有障碍物的位置以及机器人的起始位置）以及小明发出的指令，你要求出最后机器人的位置。</p>
+<p></p>]]></description>
+<input><![CDATA[<p>输入数据的第一行包括两个数R和C，（1&lt;=R&lt;=50, 1&lt;=C&lt;=50）表示迷宫由R行C列组成，接下来的R行，每行包含C和字符，表示一个迷宫的情况。其中&ldquo;.&rdquo;表示空地，&ldquo;#&rdquo;表示障碍物，&ldquo;*&rdquo;表示机器人的起始位置。接下来一行，包含一个由&ldquo;NEWS&rdquo;四个字母组成的字符串，表示小明发出的一串指令，字符串的长度不超过50。</p>
+<p></p>]]></input> 
+<output><![CDATA[<p>输出数据包含两行，每行各有一个数，设这两个数分别为a、b，表示机器人最终停在第a行第b列。请注意输入的地图保证只有一个&ldquo;*&rdquo;号，输入数据保证机器人不会走出迷宫的边界。左上角为第一行第一列。在地图中，向上为北，向下为南，向左为西，向右为东。</p>
+<p></p>]]></output>
+<sample_input><![CDATA[4 5
+#####
+#...#
+#*#.#
+#####
+NNEEEWS]]></sample_input>
+<sample_output><![CDATA[2
+3]]></sample_output>
+<hint><![CDATA[<p>机器人的行进路线如下：</p>
+<p>&nbsp; &nbsp; &nbsp; N &nbsp; &nbsp; &nbsp; N &nbsp; &nbsp; &nbsp; E &nbsp; &nbsp; &nbsp; E &nbsp; &nbsp; &nbsp; E &nbsp; &nbsp; &nbsp; W &nbsp; &nbsp; &nbsp; S<br />
+(3, 2)-&gt;(2, 2)-&gt;(2, 2)-&gt;(2, 3)-&gt;(2, 4)-&gt;(2, 4)-&gt;(2, 3)-&gt;(2, 3)</p>
+<p></p>]]></hint>
+<source><![CDATA[TJ-NOIP-2008]]></source>
+	<solution language="C"><![CDATA[#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main (int argc, char const* argv[])
+{
+    int r, c, i, j, t, k, w;
+    char map[64][64], cmd[64], buf[64];
+
+    scanf("%d %d", &r, &c); 
+    for (i = 0; i < r; i++) {
+        scanf("%s", buf);
+        for (j = 0; j < c; j++) {
+            map[i][j] = buf[j];
+            if (map[i][j] == '*') {
+                t = i; k = j;
+            }
+        }
+    }
+
+    scanf("%s", cmd);
+    w = strlen(cmd);
+
+    for (i = 0; i < w; i++) {
+        if (cmd[i] == 'N' && map[t-1][k] != '#') {
+            t--;
+        } else if (cmd[i] == 'S' && map[t+1][k] != '#') {
+            t++;
+        } else if (cmd[i] == 'E' && map[t][k+1] != '#') {
+            k++;
+        } else if (cmd[i] == 'W' && map[t][k-1] != '#') {
+            k--;
+        }
+    }
+
+    printf("%d\n%d\n", t+1, k+1);
+
+    return 0;
+}]]></solution>
+	</item>
+</fps>

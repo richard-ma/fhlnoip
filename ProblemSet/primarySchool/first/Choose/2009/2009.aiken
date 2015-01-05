@@ -1,0 +1,104 @@
+下面属于系统软件的是（   ）
+A. Word文字处理
+B. 金山毒霸
+C. 安全卫士360
+D. Ubuntu Linux
+ANSWER: D
+
+下列存储介质中只有在有电的情况下才能存储数据的是（   ）
+A. 内存
+B. 软盘
+C. 硬盘
+D. 光盘
+ANSWER: A
+
+下面的软件中和其他三个功能不同的是（   ）
+A. Microsoft Internet Explorer
+B. Miscrsoft Office
+C. Mozilla Firefox
+D. Google Chrome
+ANSWER: B
+
+下列存储介质中，最廉价（存储每个bit的平均费用最低）的是（   ）
+A. 高速缓存
+B. 光盘
+C. 硬盘
+D. 内存
+ANSWER: C
+
+下列编程语言中，不属于高级语言的是（   ）
+A. Pascal语言
+B. C语言
+C. Basic语言
+D. 汇编语言
+ANSWER: D
+
+与十进制数17相等的二进制数是（   ）
+A. 11001
+B. 10101
+C. 10011
+D. 10001
+ANSWER: D
+
+一个16位无符号整形变量所表示的整数的范围是（   ）
+A. 大于等于0，小于等于65536
+B. 大于等于0，小于65536
+C. 大于0，小于等于65536
+D. 大于0，小于65536
+ANSWER: B
+
+1MB=（   ）比特
+A. 1024
+B. 8*1024*1024
+C. 1024*1024
+D. 8*1024
+ANSWER: B
+
+下列设备属于输出设备的是（    ）
+A. 打印机
+B. 摄像头
+C. 键盘
+D. 鼠标
+ANSWER: A
+
+下列不是BASIC保留字的是（    ）
+A. SELECT
+B. FOR
+C. AND
+D. SWITCH
+ANSWER: D
+
+FIX(-3.5)的结果是（   ）
+A. -3
+B. 0.5
+C. -0.5
+D. 3
+ANSWER: A
+
+下列变量名不合法的是（   ）
+A. ACE
+B. b369
+C. B+C
+D. CED
+ANSWER: C
+
+假设变量a的值是5，b的值是7，那么在依次执行完下面三条语句：r = a MOD b: a = b: b = a \ r 之后a, b, r的值分别是（   ）
+A. 7 1 5
+B. 7 7 5
+C. 5 7 5
+D. 5 5 7
+ANSWER: A
+
+下列语句中，一定可以交换变量a和b的值的一组是（   ）
+A. a=a+b: b=a-b: a=a-b
+B. a=a-b: b=a+b: a=a+b
+C. a=a*b: b=a MOD b: a=a MOD b
+D. a=b: b=a
+ANSWER: A
+
+要使变量x取值为1至100之间（不包含1，包含100）的一个随机整数，正确的是（   ）
+A. x=INT(100*RND)
+B. x=1+INT(99*RND)
+C. x=1+INT(100*RND)
+D. x=2+INT(99*RND)
+ANSWER: D

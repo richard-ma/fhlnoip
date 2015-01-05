@@ -1,0 +1,5 @@
+IF a < 0 THEN PRINT "ERROR!"
+
+IF a < 0 THEN
+    PRINT "ERROR!"
+END IF

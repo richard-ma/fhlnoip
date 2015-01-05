@@ -1,0 +1,97 @@
+一台微机如果没有下面那项配置就不能正常工作（    ）
+A. 打印机
+B. 硬盘
+C. 内存储器
+D. 光盘驱动器
+ANSWER: C
+
+某台计算机内存容量为640K，这里的640K容量是指（    ）字节
+A. 640个
+B. 640＊1000个
+C. 640*1024个
+D. 640*1024*1024个
+ANSWER: C
+
+浏览网站必须使用浏览器，目前常用的浏览器是（    ）
+A. Outlook Express
+B. Internet Explorer
+C. Inter Exchange
+D. Hotmail
+ANSWER: B
+
+在Windows操作系统中，（    ）不能改变大小
+A. 任务栏
+B. 应用程序窗口
+C. 对话框窗口
+D. 以上答案都不正确
+ANSWER: D
+
+在微机中，通用寄存器的位数是指（    ）
+A. 32位
+B. 16位
+C. 计算机字长
+D. 控制器
+ANSWER: C
+
+将二进制数11011化为十进制为（     ）
+A. 33
+B. 63
+C. 27
+D. 19
+ANSWER: C
+
+WWW是（    ）的缩写
+A. World wide wait
+B. World Wais Web
+C. Website of World Wide
+D. World Wide Web
+ANSWER: D
+
+下列数中，最大的数是（    ）
+A. (11001100)2
+B. (90)10
+C. (52)8
+D. (3C)16
+ANSWER: A
+
+在Internet中，主机的IP地址由网络号和（    ）两部分组成
+A. 国家代码
+B. 类型号
+C. 主机号
+D. 管理部门代码
+ANSWER: C
+
+LEN(STR$(123)+STR$(456))的运算结果为（    ）
+A. 8
+B. 6
+C. 579
+D. 123 456
+ANSWER: A
+
+产生30－50（包括30和50）之间的随机整数的QBASIC表达式是（    ）
+A. INT(RND*20)+30
+B. INT(RND*20)+21
+C. INT(RND*21)+30
+D. INT(RND*21)+31
+ANSWER: C
+
+已知小写字母“m“的十六进制的ASCII码值是6D，则小写字母”c“的十六进制的ASCII码值是（    ）
+A. 98
+B. 62
+C. 99
+D. 63
+ANSWER: D
+
+十进制算术表达式：3*512+7*64+4*8+5的运算结果，用二进制表示为（    ）
+A. 10111100101
+B. 11111100101
+C. 11110100101
+D. 11111101101
+ANSWER: C
+
+计算机病毒破坏的是（    ）
+A. 软盘
+B. 硬盘
+C. 打印机
+D. 程序与数据
+ANSWER: D
