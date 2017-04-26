@@ -27,9 +27,10 @@ int main() {
             (y / 100) % 10 * 10 + (y / 1000);
 
         result = y * 10000 + ry;
-        if (((result >= start_date) && (result <= end_date) && 
-                (ry / 100 <= 12) && (ry % 100 <= days_of_month(ry/100))) ||
-                result == 92200229) {
+        if (((result >= start_date) && (result <= end_date) &&  // check date
+                (ry / 100 <= 12) && (ry / 100 >= 1) && // check month
+                (ry % 100 >= 1) && (ry % 100 <= days_of_month(ry/100))) || // check day
+                result == 92200229) { // check leap year
             ans++;
         }
     }
